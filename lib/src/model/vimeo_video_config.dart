@@ -8,21 +8,21 @@ String vimeoModelToJson(VimeoVideoConfig data) => json.encode(data.toJson());
 class VimeoVideoConfig {
   VimeoVideoConfig({
     this.request,
-    this.video,
+    // this.video,
   });
 
   factory VimeoVideoConfig.fromJson(Map<String, dynamic> json) =>
       VimeoVideoConfig(
         request: VimeoRequest.fromJson(json["request"]),
-        video: VimeoVideo.fromJson(json["video"]),
+        // video: VimeoVideo.fromJson(json["video"]),
       );
 
   VimeoRequest? request;
-  VimeoVideo? video;
+  // VimeoVideo? video;
 
   Map<String, dynamic> toJson() => {
         "request": request?.toJson(),
-        "video": video?.toJson(),
+        // "video": video?.toJson(),
       };
 }
 
@@ -128,92 +128,92 @@ class VimeoEmbed {
 class VimeoRequest {
   VimeoRequest({
     this.files,
-    this.lang,
-    this.sentry,
-    this.thumbPreview,
-    this.referrer,
-    this.cookieDomain,
-    this.timestamp,
-    this.gcDebug,
-    this.expires,
-    this.client,
-    this.currency,
-    this.session,
-    this.cookie,
-    this.build,
-    this.urls,
-    this.signature,
-    this.flags,
-    this.country,
-    this.fileCodecs,
-    this.abTests,
+    // this.lang,
+    // this.sentry,
+    // this.thumbPreview,
+    // this.referrer,
+    // this.cookieDomain,
+    // this.timestamp,
+    // this.gcDebug,
+    // this.expires,
+    // this.client,
+    // this.currency,
+    // this.session,
+    // this.cookie,
+    // this.build,
+    // this.urls,
+    // this.signature,
+    // this.flags,
+    // this.country,
+    // this.fileCodecs,
+    // this.abTests,
   });
 
   factory VimeoRequest.fromJson(Map<String, dynamic> json) => VimeoRequest(
         files: VimeoFiles.fromJson(json["files"]),
-        lang: json["lang"],
-        sentry: VimeoSentry.fromJson(json["sentry"]),
-        thumbPreview: VimeoThumbPreview.fromJson(json["thumb_preview"]),
-        referrer: json["referrer"],
-        cookieDomain: json["cookie_domain"],
-        timestamp: json["timestamp"],
-        gcDebug: VimeoGcDebug.fromJson(json["gc_debug"]),
-        expires: json["expires"],
-        client: VimeoClient.fromJson(json["client"]),
-        currency: json["currency"],
-        session: json["session"],
-        cookie: VimeoCookie.fromJson(json["cookie"]),
-        build: VimeoBuild.fromJson(json["build"]),
-        urls: VimeoUrls.fromJson(json["urls"]),
-        signature: json["signature"],
-        flags: VimeoFlags.fromJson(json["flags"]),
-        country: json["country"],
-        fileCodecs: VimeoFileCodecs.fromJson(json["file_codecs"]),
-        abTests: VimeoAbTests.fromJson(json["ab_tests"]),
+        // lang: json["lang"],
+        // sentry: VimeoSentry.fromJson(json["sentry"]),
+        // thumbPreview: VimeoThumbPreview.fromJson(json["thumb_preview"]),
+        // referrer: json["referrer"],
+        // cookieDomain: json["cookie_domain"],
+        // timestamp: json["timestamp"],
+        // gcDebug: VimeoGcDebug.fromJson(json["gc_debug"]),
+        // expires: json["expires"],
+        // client: VimeoClient.fromJson(json["client"]),
+        // currency: json["currency"],
+        // session: json["session"],
+        // cookie: VimeoCookie.fromJson(json["cookie"]),
+        // build: VimeoBuild.fromJson(json["build"]),
+        // urls: VimeoUrls.fromJson(json["urls"]),
+        // signature: json["signature"],
+        // flags: VimeoFlags.fromJson(json["flags"]),
+        // country: json["country"],
+        // fileCodecs: VimeoFileCodecs.fromJson(json["file_codecs"]),
+        // abTests: VimeoAbTests.fromJson(json["ab_tests"]),
       );
 
   VimeoFiles? files;
-  String? lang;
-  VimeoSentry? sentry;
-  VimeoThumbPreview? thumbPreview;
-  dynamic referrer;
-  String? cookieDomain;
-  int? timestamp;
-  VimeoGcDebug? gcDebug;
-  int? expires;
-  VimeoClient? client;
-  String? currency;
-  String? session;
-  VimeoCookie? cookie;
-  VimeoBuild? build;
-  VimeoUrls? urls;
-  String? signature;
-  VimeoFlags? flags;
-  String? country;
-  VimeoFileCodecs? fileCodecs;
-  VimeoAbTests? abTests;
+  // String? lang;
+  // VimeoSentry? sentry;
+  // VimeoThumbPreview? thumbPreview;
+  // dynamic referrer;
+  // String? cookieDomain;
+  // int? timestamp;
+  // VimeoGcDebug? gcDebug;
+  // int? expires;
+  // VimeoClient? client;
+  // String? currency;
+  // String? session;
+  // VimeoCookie? cookie;
+  // VimeoBuild? build;
+  // VimeoUrls? urls;
+  // String? signature;
+  // VimeoFlags? flags;
+  // String? country;
+  // VimeoFileCodecs? fileCodecs;
+  // VimeoAbTests? abTests;
 
   Map<String, dynamic> toJson() => {
         "files": files?.toJson(),
-        "lang": lang,
-        "sentry": sentry?.toJson(),
-        "thumb_preview": thumbPreview?.toJson(),
-        "referrer": referrer,
-        "cookie_domain": cookieDomain,
-        "timestamp": timestamp,
-        "gc_debug": gcDebug?.toJson(),
-        "expires": expires,
-        "client": client?.toJson(),
-        "currency": currency,
-        "session": session,
-        "cookie": cookie?.toJson(),
-        "build": build?.toJson(),
-        "urls": urls?.toJson(),
-        "signature": signature,
-        "flags": flags?.toJson(),
-        "country": country,
-        "file_codecs": fileCodecs?.toJson(),
-        "ab_tests": abTests?.toJson(),
+        // "lang": lang,
+        // "sentry": sentry?.toJson(),
+        // "thumb_preview": thumbPreview?.toJson(),
+        // "referrer": referrer,
+        // "cookie_domain": cookieDomain,
+        // "timestamp": timestamp,
+        // "gc_debug": gcDebug?.toJson(),
+        // "expires": expires,
+        // "client": client?.toJson(),
+        // "currency": currency,
+        // "session": session,
+        // "cookie": cookie?.toJson(),
+        // "build": build?.toJson(),
+        // "urls": urls?.toJson(),
+        // "signature": signature,
+        // "flags": flags?.toJson(),
+        // "country": country,
+        // "file_codecs": fileCodecs?.toJson(),
+        // "ab_tests": abTests?.toJson(),
       };
 }
 
@@ -393,25 +393,26 @@ class VimeoHevc {
 
 class VimeoFiles {
   VimeoFiles({
-    this.dash,
-    this.hls,
+    // this.dash,
+    // this.hls,
     this.progressive,
   });
 
   factory VimeoFiles.fromJson(Map<String, dynamic> json) => VimeoFiles(
-        dash: VimeoDash.fromJson(json["dash"]),
-        hls: VimeoHls.fromJson(json["hls"]),
+        // dash: VimeoDash.fromJson(json["dash"]),
+        // hls: VimeoHls.fromJson(json["hls"]),
         progressive: List<VimeoProgressive>.from(
-            json["progressive"].map((x) => VimeoProgressive.fromJson(x))),
+          json["progressive"].map((x) => VimeoProgressive.fromJson(x)),
+        ),
       );
 
-  VimeoDash? dash;
-  VimeoHls? hls;
+  // VimeoDash? dash;
+  // VimeoHls? hls;
   List<VimeoProgressive?>? progressive;
 
   Map<String, dynamic> toJson() => {
-        "dash": dash?.toJson(),
-        "hls": hls?.toJson(),
+        // "dash": dash?.toJson(),
+        // "hls": hls?.toJson(),
         "progressive": progressive != null
             ? List<dynamic>.from(progressive!.map((x) => x?.toJson()))
             : null,
@@ -557,54 +558,54 @@ class VimeoHls {
 
 class VimeoProgressive {
   VimeoProgressive({
-    this.profile,
-    this.width,
-    this.mime,
-    this.fps,
+    // this.profile,
+    // this.width,
+    // this.mime,
+    // this.fps,
     this.url,
-    this.cdn,
-    this.quality,
-    this.id,
-    this.origin,
-    this.height,
+    // this.cdn,
+    // this.quality,
+    // this.id,
+    // this.origin,
+    // this.height,
   });
 
   factory VimeoProgressive.fromJson(Map<String, dynamic> json) =>
       VimeoProgressive(
-        profile: json["profile"],
-        width: json["width"],
-        mime: json["mime"],
-        fps: json["fps"],
+        // profile: json["profile"],
+        // width: json["width"],
+        // mime: json["mime"],
+        // fps: json["fps"],
         url: json["url"],
-        cdn: json["cdn"],
-        quality: json["quality"],
-        id: json["id"],
-        origin: json["origin"],
-        height: json["height"],
+        // cdn: json["cdn"],
+        // quality: json["quality"],
+        // id: json["id"],
+        // origin: json["origin"],
+        // height: json["height"],
       );
 
-  int? profile;
-  int? width;
-  String? mime;
-  int? fps;
+  // int? profile;
+  // int? width;
+  // String? mime;
+  // int? fps;
   String? url;
-  String? cdn;
-  String? quality;
-  int? id;
-  String? origin;
-  int? height;
+  // String? cdn;
+  // String? quality;
+  // int? id;
+  // String? origin;
+  // int? height;
 
   Map<String, dynamic> toJson() => {
-        "profile": profile,
-        "width": width,
-        "mime": mime,
-        "fps": fps,
+        // "profile": profile,
+        // "width": width,
+        // "mime": mime,
+        // "fps": fps,
         "url": url,
-        "cdn": cdn,
-        "quality": quality,
-        "id": id,
-        "origin": origin,
-        "height": height,
+        // "cdn": cdn,
+        // "quality": quality,
+        // "id": id,
+        // "origin": origin,
+        // "height": height,
       };
 }
 
@@ -863,219 +864,219 @@ class VimeoUser {
   }
 }
 
-class VimeoVideo {
-  VimeoVideo({
-    this.rating,
-    this.version,
-    this.height,
-    this.duration,
-    this.thumbs,
-    this.owner,
-    this.id,
-    this.title,
-    this.shareUrl,
-    this.width,
-    this.embedPermission,
-    this.fps,
-    this.spatial,
-    this.liveEvent,
-    this.allowHd,
-    this.hd,
-    this.lang,
-    this.defaultToHd,
-    this.url,
-    this.privacy,
-    this.bypassToken,
-    this.unlistedHash,
-  });
+// class VimeoVideo {
+//   VimeoVideo({
+//     this.rating,
+//     this.version,
+//     this.height,
+//     this.duration,
+//     this.thumbs,
+//     this.owner,
+//     this.id,
+//     this.title,
+//     this.shareUrl,
+//     this.width,
+//     this.embedPermission,
+//     this.fps,
+//     this.spatial,
+//     this.liveEvent,
+//     this.allowHd,
+//     this.hd,
+//     this.lang,
+//     this.defaultToHd,
+//     this.url,
+//     this.privacy,
+//     this.bypassToken,
+//     this.unlistedHash,
+//   });
 
-  VimeoVideo.fromJson(dynamic json) {
-    rating =
-        json['rating'] != null ? VimeoRating.fromJson(json['rating']) : null;
-    version =
-        json['version'] != null ? VimeoVersion.fromJson(json['version']) : null;
-    height = json['height'];
-    duration = json['duration'];
-    thumbs =
-        json['thumbs'] != null ? VimeoThumbs.fromJson(json['thumbs']) : null;
-    owner = json['owner'] != null ? VimeoOwner.fromJson(json['owner']) : null;
-    id = json['id'];
-    title = json['title'];
-    shareUrl = json['share_url'];
-    width = json['width'];
-    embedPermission = json['embed_permission'];
-    fps = json['fps'];
-    spatial = json['spatial'];
-    liveEvent = json['live_event'];
-    allowHd = json['allow_hd'];
-    hd = json['hd'];
-    lang = json['lang'];
-    defaultToHd = json['default_to_hd'];
-    url = json['url'];
-    privacy = json['privacy'];
-    bypassToken = json['bypass_token'];
-    unlistedHash = json['unlisted_hash'];
-  }
+//   VimeoVideo.fromJson(dynamic json) {
+//     rating =
+//         json['rating'] != null ? VimeoRating.fromJson(json['rating']) : null;
+//     version =
+//         json['version'] != null ? VimeoVersion.fromJson(json['version']) : null;
+//     height = json['height'];
+//     duration = json['duration'];
+//     thumbs =
+//         json['thumbs'] != null ? VimeoThumbs.fromJson(json['thumbs']) : null;
+//     owner = json['owner'] != null ? VimeoOwner.fromJson(json['owner']) : null;
+//     id = json['id'];
+//     title = json['title'];
+//     shareUrl = json['share_url'];
+//     width = json['width'];
+//     embedPermission = json['embed_permission'];
+//     fps = json['fps'];
+//     spatial = json['spatial'];
+//     liveEvent = json['live_event'];
+//     allowHd = json['allow_hd'];
+//     hd = json['hd'];
+//     lang = json['lang'];
+//     defaultToHd = json['default_to_hd'];
+//     url = json['url'];
+//     privacy = json['privacy'];
+//     bypassToken = json['bypass_token'];
+//     unlistedHash = json['unlisted_hash'];
+//   }
 
-  VimeoRating? rating;
-  VimeoVersion? version;
-  int? height;
-  int? duration;
-  VimeoThumbs? thumbs;
-  VimeoOwner? owner;
-  int? id;
-  String? title;
-  String? shareUrl;
-  int? width;
-  String? embedPermission;
-  double? fps;
-  int? spatial;
-  dynamic liveEvent;
-  int? allowHd;
-  int? hd;
-  dynamic lang;
-  int? defaultToHd;
-  String? url;
-  String? privacy;
-  String? bypassToken;
-  dynamic unlistedHash;
+//   VimeoRating? rating;
+//   VimeoVersion? version;
+//   int? height;
+//   int? duration;
+//   VimeoThumbs? thumbs;
+//   VimeoOwner? owner;
+//   int? id;
+//   String? title;
+//   String? shareUrl;
+//   int? width;
+//   String? embedPermission;
+//   double? fps;
+//   int? spatial;
+//   dynamic liveEvent;
+//   int? allowHd;
+//   int? hd;
+//   dynamic lang;
+//   int? defaultToHd;
+//   String? url;
+//   String? privacy;
+//   String? bypassToken;
+//   dynamic unlistedHash;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    if (rating != null) {
-      map['rating'] = rating?.toJson();
-    }
-    if (version != null) {
-      map['version'] = version?.toJson();
-    }
-    map['height'] = height;
-    map['duration'] = duration;
-    if (thumbs != null) {
-      map['thumbs'] = thumbs?.toJson();
-    }
-    if (owner != null) {
-      map['owner'] = owner?.toJson();
-    }
-    map['id'] = id;
-    map['title'] = title;
-    map['share_url'] = shareUrl;
-    map['width'] = width;
-    map['embed_permission'] = embedPermission;
-    map['fps'] = fps;
-    map['spatial'] = spatial;
-    map['live_event'] = liveEvent;
-    map['allow_hd'] = allowHd;
-    map['hd'] = hd;
-    map['lang'] = lang;
-    map['default_to_hd'] = defaultToHd;
-    map['url'] = url;
-    map['privacy'] = privacy;
-    map['bypass_token'] = bypassToken;
-    map['unlisted_hash'] = unlistedHash;
-    return map;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final map = <String, dynamic>{};
+//     if (rating != null) {
+//       map['rating'] = rating?.toJson();
+//     }
+//     if (version != null) {
+//       map['version'] = version?.toJson();
+//     }
+//     map['height'] = height;
+//     map['duration'] = duration;
+//     if (thumbs != null) {
+//       map['thumbs'] = thumbs?.toJson();
+//     }
+//     if (owner != null) {
+//       map['owner'] = owner?.toJson();
+//     }
+//     map['id'] = id;
+//     map['title'] = title;
+//     map['share_url'] = shareUrl;
+//     map['width'] = width;
+//     map['embed_permission'] = embedPermission;
+//     map['fps'] = fps;
+//     map['spatial'] = spatial;
+//     map['live_event'] = liveEvent;
+//     map['allow_hd'] = allowHd;
+//     map['hd'] = hd;
+//     map['lang'] = lang;
+//     map['default_to_hd'] = defaultToHd;
+//     map['url'] = url;
+//     map['privacy'] = privacy;
+//     map['bypass_token'] = bypassToken;
+//     map['unlisted_hash'] = unlistedHash;
+//     return map;
+//   }
+// }
 
-class VimeoOwner {
-  VimeoOwner({
-    this.accountType,
-    this.name,
-    this.img,
-    this.url,
-    this.img2x,
-    this.id,
-  });
+// class VimeoOwner {
+//   VimeoOwner({
+//     this.accountType,
+//     this.name,
+//     this.img,
+//     this.url,
+//     this.img2x,
+//     this.id,
+//   });
 
-  VimeoOwner.fromJson(dynamic json) {
-    accountType = json['account_type'];
-    name = json['name'];
-    img = json['img'];
-    url = json['url'];
-    img2x = json['img_2x'];
-    id = json['id'];
-  }
+//   VimeoOwner.fromJson(dynamic json) {
+//     accountType = json['account_type'];
+//     name = json['name'];
+//     img = json['img'];
+//     url = json['url'];
+//     img2x = json['img_2x'];
+//     id = json['id'];
+//   }
 
-  String? accountType;
-  String? name;
-  String? img;
-  String? url;
-  String? img2x;
-  int? id;
+//   String? accountType;
+//   String? name;
+//   String? img;
+//   String? url;
+//   String? img2x;
+//   int? id;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['account_type'] = accountType;
-    map['name'] = name;
-    map['img'] = img;
-    map['url'] = url;
-    map['img_2x'] = img2x;
-    map['id'] = id;
-    return map;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final map = <String, dynamic>{};
+//     map['account_type'] = accountType;
+//     map['name'] = name;
+//     map['img'] = img;
+//     map['url'] = url;
+//     map['img_2x'] = img2x;
+//     map['id'] = id;
+//     return map;
+//   }
+// }
 
-class VimeoRating {
-  VimeoRating({
-    this.id,
-  });
+// class VimeoRating {
+//   VimeoRating({
+//     this.id,
+//   });
 
-  VimeoRating.fromJson(dynamic json) {
-    id = json['id'];
-  }
+//   VimeoRating.fromJson(dynamic json) {
+//     id = json['id'];
+//   }
 
-  int? id;
+//   int? id;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['id'] = id;
-    return map;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final map = <String, dynamic>{};
+//     map['id'] = id;
+//     return map;
+//   }
+// }
 
-class VimeoThumbs {
-  VimeoThumbs({
-    this.base640,
-    this.base960,
-    this.base,
-  });
+// class VimeoThumbs {
+//   VimeoThumbs({
+//     this.base640,
+//     this.base960,
+//     this.base,
+//   });
 
-  VimeoThumbs.fromJson(dynamic json) {
-    base640 = json['640'];
-    base960 = json['960'];
-    base = json['base'];
-  }
+//   VimeoThumbs.fromJson(dynamic json) {
+//     base640 = json['640'];
+//     base960 = json['960'];
+//     base = json['base'];
+//   }
 
-  String? base640;
-  String? base960;
-  String? base;
+//   String? base640;
+//   String? base960;
+//   String? base;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['640'] = base640;
-    map['960'] = base960;
-    map['base'] = base;
-    return map;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final map = <String, dynamic>{};
+//     map['640'] = base640;
+//     map['960'] = base960;
+//     map['base'] = base;
+//     return map;
+//   }
+// }
 
-class VimeoVersion {
-  VimeoVersion({
-    this.current,
-    this.available,
-  });
+// class VimeoVersion {
+//   VimeoVersion({
+//     this.current,
+//     this.available,
+//   });
 
-  VimeoVersion.fromJson(dynamic json) {
-    current = json['current'];
-    available = json['available'];
-  }
+//   VimeoVersion.fromJson(dynamic json) {
+//     current = json['current'];
+//     available = json['available'];
+//   }
 
-  dynamic current;
-  dynamic available;
+//   dynamic current;
+//   dynamic available;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['current'] = current;
-    map['available'] = available;
-    return map;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final map = <String, dynamic>{};
+//     map['current'] = current;
+//     map['available'] = available;
+//     return map;
+//   }
+// }

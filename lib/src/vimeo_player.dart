@@ -10,11 +10,12 @@ import 'model/vimeo_video_config.dart';
 class VimeoVideoPlayer extends StatefulWidget {
   const VimeoVideoPlayer({
     Key? key,
-    required this.url,
+    required this.vimeoVideoId,
+    this.autoPlay = false,
   }) : super(key: key);
 
-  /// vimeo video url
-  final String url;
+  final String vimeoVideoId;
+  final bool autoPlay;
 
   @override
   _VimeoVideoPlayerState createState() => _VimeoVideoPlayerState();
@@ -22,65 +23,61 @@ class VimeoVideoPlayer extends StatefulWidget {
 
 class _VimeoVideoPlayerState extends State<VimeoVideoPlayer> {
   /// video player controller
-  late VideoPlayerController _videoPlayerController;
+  VideoPlayerController? _videoPlayerController;
 
   /// flick manager to manage the flick player
-  late FlickManager _flickManager;
+  FlickManager? _flickManager;
 
   /// used to notify that video is loaded or not
   ValueNotifier<bool> isVimeoVideoLoaded = ValueNotifier(false);
 
   /// used to check that the url format is valid vimeo video format
-  bool get _isVimeoVideo {
-    var regExp = RegExp(
-      r"^((https?):\/\/)?(www.)?vimeo\.com\/([0-9]+).*$",
-      caseSensitive: false,
-      multiLine: false,
-    );
-    final match = regExp.firstMatch(widget.url);
-    if (match != null && match.groupCount >= 1) return true;
-    return false;
-  }
+  // bool get _isVimeoVideo {
+  //   var regExp = RegExp(
+  //     r"^((https?):\/\/)?(www.)?vimeo\.com\/([0-9]+).*$",
+  //     caseSensitive: false,
+  //     multiLine: false,
+  //   );
+  //   final match = regExp.firstMatch(widget.url);
+  //   if (match != null && match.groupCount >= 1) return true;
+  //   return false;
+  // }
 
   @override
   void initState() {
     super.initState();
 
     /// checking that vimeo url is valid or not
-    if (_isVimeoVideo) {
-      _videoPlayer();
-    }
+    _videoPlayer();
   }
 
   @override
   void deactivate() {
-    _videoPlayerController.pause();
+    _videoPlayerController?.pause();
     super.deactivate();
   }
 
   @override
   void dispose() {
     /// disposing the controllers
-    _flickManager.dispose();
-    _videoPlayerController.dispose();
+    _flickManager?.dispose();
+    _videoPlayerController?.dispose();
     super.dispose();
   }
 
   void _videoPlayer() {
-    if (_isVimeoVideo) {
-      /// getting the vimeo video configuration from api and setting managers
-      _getVimeoVideoConfigFromUrl(widget.url).then((value) {
-        var vimeoMp4Video = value?.request?.files?.progressive?[0]?.url ?? '';
+    /// getting the vimeo video configuration from api and setting managers
+    _getVimeoVideoConfig(vimeoVideoId: widget.vimeoVideoId).then((value) {
+      var vimeoMp4Video = value?.request?.files?.progressive?[0]?.url ?? '';
 
-        _videoPlayerController = VideoPlayerController.network(vimeoMp4Video);
-        _flickManager = FlickManager(
-          videoPlayerController: _videoPlayerController,
-          autoPlay: false,
-        );
+      _videoPlayerController = VideoPlayerController.network(vimeoMp4Video);
+      _flickManager = FlickManager(
+        videoPlayerController: _videoPlayerController!,
+        autoPlay: widget.autoPlay,
+      );
 
-        isVimeoVideoLoaded.value = !isVimeoVideoLoaded.value;
-      });
-    }
+      isVimeoVideoLoaded.value = !isVimeoVideoLoaded.value;
+    });
   }
 
   @override
@@ -91,7 +88,7 @@ class _VimeoVideoPlayerState extends State<VimeoVideoPlayer> {
         child: isVideo
             ? FlickVideoPlayer(
                 key: ObjectKey(_flickManager),
-                flickManager: _flickManager,
+                flickManager: _flickManager!,
                 preferredDeviceOrientation: const [
                   DeviceOrientation.portraitUp,
                 ],
@@ -114,33 +111,33 @@ class _VimeoVideoPlayerState extends State<VimeoVideoPlayer> {
   }
 
   /// used to get valid vimeo video configuration
-  Future<VimeoVideoConfig?> _getVimeoVideoConfigFromUrl(
-    String url, {
-    bool trimWhitespaces = true,
-  }) async {
-    if (trimWhitespaces) url = url.trim();
+  // Future<VimeoVideoConfig?> _getVimeoVideoConfigFromUrl(
+  //   String url, {
+  //   bool trimWhitespaces = true,
+  // }) async {
+  //   if (trimWhitespaces) url = url.trim();
 
-    /**
-    here i'm converting the vimeo video id only and calling config api for vimeo video .mp4
-    supports this types of urls
-    https://vimeo.com/70591644 => 70591644
-    www.vimeo.com/70591644 => 70591644
-    vimeo.com/70591644 => 70591644
-    */
-    var vimeoVideoId = '';
-    var videoIdGroup = 4;
-    for (var exp in [
-      RegExp(r"^((https?):\/\/)?(www.)?vimeo\.com\/([0-9]+).*$"),
-    ]) {
-      RegExpMatch? match = exp.firstMatch(url);
-      if (match != null && match.groupCount >= 1) {
-        vimeoVideoId = match.group(videoIdGroup) ?? '';
-      }
-    }
+  //   /**
+  //   here i'm converting the vimeo video id only and calling config api for vimeo video .mp4
+  //   supports this types of urls
+  //   https://vimeo.com/70591644 => 70591644
+  //   www.vimeo.com/70591644 => 70591644
+  //   vimeo.com/70591644 => 70591644
+  //   */
+  //   var vimeoVideoId = '';
+  //   var videoIdGroup = 4;
+  //   for (var exp in [
+  //     RegExp(r"^((https?):\/\/)?(www.)?vimeo\.com\/([0-9]+).*$"),
+  //   ]) {
+  //     RegExpMatch? match = exp.firstMatch(url);
+  //     if (match != null && match.groupCount >= 1) {
+  //       vimeoVideoId = match.group(videoIdGroup) ?? '';
+  //     }
+  //   }
 
-    final response = await _getVimeoVideoConfig(vimeoVideoId: vimeoVideoId);
-    return (response != null) ? response : null;
-  }
+  //   final response = await _getVimeoVideoConfig(vimeoVideoId: vimeoVideoId);
+  //   return (response != null) ? response : null;
+  // }
 
   /// give vimeo video configuration from api
   Future<VimeoVideoConfig?> _getVimeoVideoConfig({
