@@ -61,6 +61,7 @@ class _VimeoVideoPlayerState extends State<VimeoVideoPlayer> {
   void dispose() {
     /// disposing the controllers
     _flickManager?.dispose();
+    _videoPlayerController?.pause();
     _videoPlayerController?.dispose();
     super.dispose();
   }
