@@ -95,6 +95,7 @@ class _VimeoVideoPlayerState extends State<VimeoVideoPlayer> {
                 ],
                 preferredDeviceOrientationFullscreen: const [
                   DeviceOrientation.landscapeLeft,
+                  DeviceOrientation.landscapeRight,
                 ],
                 flickVideoWithControls: const FlickVideoWithControls(
                   videoFit: BoxFit.fitWidth,
