@@ -69,7 +69,15 @@ class _VimeoVideoPlayerState extends State<VimeoVideoPlayer> {
   void _videoPlayer() {
     /// getting the vimeo video configuration from api and setting managers
     _getVimeoVideoConfig(vimeoVideoId: widget.vimeoVideoId).then((value) {
-      var vimeoMp4Video = value?.request?.files?.progressive?[0]?.url ?? '';
+      String vimeoMp4Video = '';
+      if (value?.request?.files?.hls?.defaultCdn ==
+          'akfire_interconnect_quic') {
+        vimeoMp4Video =
+            value?.request?.files?.hls?.cdns?.akfireInterconnectQuic?.url ?? "";
+      } else if (value?.request?.files?.hls?.defaultCdn == 'fastly_skyfire') {
+        vimeoMp4Video =
+            value?.request?.files?.hls?.cdns?.fastlySkyfire?.url ?? "";
+      }
 
       _videoPlayerController = VideoPlayerController.network(vimeoMp4Video);
       _flickManager = FlickManager(

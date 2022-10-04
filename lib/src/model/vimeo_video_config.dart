@@ -394,25 +394,25 @@ class VimeoHevc {
 class VimeoFiles {
   VimeoFiles({
     // this.dash,
-    // this.hls,
+    this.hls,
     this.progressive,
   });
 
   factory VimeoFiles.fromJson(Map<String, dynamic> json) => VimeoFiles(
         // dash: VimeoDash.fromJson(json["dash"]),
-        // hls: VimeoHls.fromJson(json["hls"]),
+        hls: VimeoHls.fromJson(json["hls"]),
         progressive: List<VimeoProgressive>.from(
           json["progressive"].map((x) => VimeoProgressive.fromJson(x)),
         ),
       );
 
   // VimeoDash? dash;
-  // VimeoHls? hls;
+  VimeoHls? hls;
   List<VimeoProgressive?>? progressive;
 
   Map<String, dynamic> toJson() => {
         // "dash": dash?.toJson(),
-        // "hls": hls?.toJson(),
+        "hls": hls?.toJson(),
         "progressive": progressive != null
             ? List<dynamic>.from(progressive!.map((x) => x?.toJson()))
             : null,
